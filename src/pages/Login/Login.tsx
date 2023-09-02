@@ -1,4 +1,5 @@
 import styles from "./Login.module.css"
+import "./override.css"
 import { Link, useNavigate } from 'react-router-dom';
 import { isEmailValid, isPasswordValid } from '../../utils/utils';
 import { Button, Checkbox, Form, Input, message } from 'antd';
@@ -20,7 +21,7 @@ export default function Login() {
       if (messageState.type === "success") {
         message.success(messageState.message);
         dispatch(setState({ key: "message", value: { type: "", message: "" } }))
-        navigate("/home")
+        window.location.href = `${window.location.protocol}//${window.location.host}/home`
       }
       if (messageState.type === "error") {
         message.error(messageState.message);
@@ -51,7 +52,7 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="user-login">
       <Navbar />
       <div className={styles.Header}>
         <div className={styles.BackIconContainer} onClick={() => navigate(-1)}>
@@ -63,6 +64,7 @@ export default function Login() {
       </div>
       <div className={styles.LoginContainer}>
         <Form
+        className={styles.LoginForm}
           name="basic"
           labelCol={{ span: 8 }}
           wrapperCol={{ span: 16 }}
@@ -75,6 +77,7 @@ export default function Login() {
           <Form.Item<FieldType>
             label="Email"
             name="email"
+            className={styles.Label}
             rules={[{ required: true, message: 'Please input your Email!' }]}
           >
             <Input />
@@ -96,9 +99,9 @@ export default function Login() {
             <Checkbox>Remember me</Checkbox>
           </Form.Item>
 
-          <p>New user? Click <Link to='/register'> here </Link> to register</p>
+          <p>New user? Click <Link to='/register'> here </Link> to register</p> <br/>
 
-          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Form.Item wrapperCol={{ offset:4, span: 16 }}>
             <Button
               type="primary"
               htmlType="submit"

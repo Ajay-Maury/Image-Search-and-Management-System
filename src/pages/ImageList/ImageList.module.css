@@ -1,56 +1,56 @@
-.ImageContainer
-{
+.ImageContainer {
     padding: 0.2% 3% 3%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 50px;
     height: max-content;
 }
-.SearchFilterContainer{
+
+.SearchFilterContainer {
     margin: 5px 0 10px 25px;
 }
-.SearchContainer{
+
+.SearchContainer {
     display: flex;
     width: 50%;
 }
 
-.SearchContainer>Input{
+.SearchContainer>Input {
     width: 70%;
     margin-right: 5px;
 }
 
-.ImageContainerBox 
-{
+.ImageContainerBox {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 3px;
     text-align: center;
     font-size: 1.1em;
     border-radius: 5%;
+    overflow: hidden;
 }
 
-.ImageBox
-{
+.ImageBox {
     border-radius: 5%;
     border: 1px solid black;
     height: 300px;
+    width: 100%;
 }
 
-.ImageBox>img
-{
+.ImageBox>img {
     width: 100%;
     height: 100%;
-    padding: 1%;
+    object-fit: cover;
+    padding: 1%
 }
 
-.link{
+.link {
     margin: 0;
-      text-decoration: none;
+    text-decoration: none;
     color: black;
-    /* font-weight: bold; */
     font-size: 1.3rem;
 }
 
-.LoaderDiv{
+.LoaderDiv {
     width: 100;
     height: 70vh;
     display: flex;
@@ -58,7 +58,51 @@
     justify-content: center;
 }
 
-.Footer{
+.Footer {
     text-align: right;
     margin: 0px 25px 10px 0;
+}
+
+.DetailText {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* Responsive media queries */
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .ImageContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 470px) and (max-width: 768px) {
+    .ImageContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .ImageContainer {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding: 0.2% 1%;
+        margin: 5px 30px;
+    }
+
+    .SearchContainer {
+        width: 100%;
+    }
+
+    .SearchContainer>Input {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .Footer {
+        text-align: center;
+        margin: 0;
+    }
 }

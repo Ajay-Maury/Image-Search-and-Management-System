@@ -12,13 +12,13 @@ const Navbar = () => {
       >
         <div className={styles.MenuContainer}>
           <div>
-            <Space size={30}>
+            <Space size={25}>
               <p className={styles.MenuItems} onClick={() => navigate('/home')}><HomeOutlined /> Home</p>
               <p className={styles.MenuItems}>About</p>
             </Space>
           </div>
           <div>
-            <Space size={30}>
+            <Space size={25}>
               <Button type={"primary"} onClick={() => navigate('/upload')}><UploadOutlined /> Upload</Button>
               {!isUserLoggedin() ?
                 <Button type={"primary"} onClick={() => navigate('/login')}><LoginOutlined />Login</Button> :

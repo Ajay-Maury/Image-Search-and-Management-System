@@ -9,7 +9,7 @@ import { config } from '../../config/config'
 import { getTokenHeader } from "../../utils/utils";
 import { useEffect, useState } from 'react'
 import { ISavePayload } from './UploadImages.interface'
-import { saveUploadImageAsync, selectImageUploadState, setState } from './UploadImages.slice'
+import { resetState, saveUploadImageAsync, selectImageUploadState, setState } from './UploadImages.slice'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import _ from 'lodash'
 
@@ -37,7 +37,7 @@ const UploadImages = () => {
   useEffect(() => {
     if (_.isEqual(loader, "success")) {
       message.success('Image saves successfully')
-      dispatch(setState({ key: "loader", value: "idle" }))
+      dispatch(resetState())
     }
     if (_.isEqual(loader, "failed")) {
       message.error('Something went wrong')

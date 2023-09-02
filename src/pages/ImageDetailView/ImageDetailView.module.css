@@ -1,12 +1,12 @@
-.LoaderDiv{
-    width: 100;
+.LoaderDiv {
+    width: 100%;
     height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.Header{
+.Header {
     margin-left: 20px;
     display: flex;
     font-weight: bold;
@@ -14,32 +14,50 @@
     align-items: center;
 }
 
-.BackIconContainer{
+.BackIconContainer {
     font-size: 1.5rem;
     margin-right: 10px;
     padding-right: 3px;
-
 }
 
-.BackIconContainer:hover{
+.BackIconContainer:hover {
     cursor: pointer;
     background-color: rgb(112, 111, 111);
     border-radius: 50%;
     color: white;
 }
 
-.ImageDetailViewContainer{
+.ImageDetailViewContainer {
     width: 100%;
-    height: 90vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    margin: 3%;
+    padding: 3%;
 }
 
-.ImageDetailView{
+.ImageDetailView {
     text-align: center;
     border: 1px solid black;
     border-radius: 5%;
+    padding: 20px;
+    max-width: 90%;
+    margin-top: 20px;
+}
 
+.ImageDetailView>div {
+    display: flex;
+    justify-content: center;
+}
+
+.ImageBox {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 5%;
+}
+
+.ImageBox>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

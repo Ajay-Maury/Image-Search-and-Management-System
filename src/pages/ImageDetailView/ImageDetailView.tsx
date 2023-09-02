@@ -50,13 +50,17 @@ const ImageDetailView = () => {
        {!_.isEmpty(_.get(data,"imageUrl",""))?
        <div className={styles.ImageDetailViewContainer}>
        <div className={styles.ImageDetailView}>
+        <div>
+        <div className={styles.ImageBox}>
          <img src={_.get(data,"imageUrl","")} alt={_.get(data,"title","")} />
+         </div>
+         </div>
          <Divider />
-         <strong>Title: </strong><span>{_.get(data,"title")}</span> <br/>
-         <strong>Description: </strong><span>{_.get(data,"description")}</span><br/>
-         <strong>Resolution: </strong><span>{_.get(data,"width")}*{_.get(data,"height")}</span><br/>
-         <strong>Image size: </strong><span> {_.get(data,"size",0).toFixed(2)} KB</span><br/>
-         <strong>Keywords: </strong><span>{_.get(data,"keywords",[]).join(",")}</span><br/>
+         <p><strong>Title: </strong><span>{_.get(data,"title")}</span></p>
+         <p><strong>Description: </strong><span>{_.get(data,"description")}</span></p>
+         <p><strong>Resolution: </strong><span>{_.get(data,"width")}*{_.get(data,"height")}</span></p>
+         <p><strong>Image size: </strong><span> {_.get(data,"size",0).toFixed(2)} KB</span></p>
+         <p><strong>Keywords: </strong><span>{_.get(data,"keywords",[]).join(",")}</span></p>
        </div>
       </div> 
       : <div  className={styles.LoaderDiv}>Image not found</div> 

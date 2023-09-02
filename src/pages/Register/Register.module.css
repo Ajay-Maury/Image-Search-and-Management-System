@@ -27,3 +27,13 @@
     border-radius: 50%;
     color: white;
 }
+
+
+.RegisterForm{
+    border: 1px solid black;
+    padding: 5%;
+    width: 60%;
+    border-radius: 15px;
+    background-color: rgba(222, 221, 220, 0.493);
+    font-size: 1rem;
+}  

@@ -27,3 +27,12 @@
     border-radius: 50%;
     color: white;
 }
+
+.LoginForm{
+    border: 1px solid black;
+    padding: 5%;
+    width: 60%;
+    font-size: 1rem;
+    border-radius: 15px;
+    background-color: rgba(222, 221, 220, 0.493);
+}   

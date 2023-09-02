@@ -33,6 +33,7 @@ const imageSaveSlice = createSlice({
             const { key, value } = payload.payload;
             _.update(state, `${key}`, () => value);
         },
+        resetState: () => initialState
     },
     extraReducers: builder => {
         builder
@@ -48,6 +49,6 @@ const imageSaveSlice = createSlice({
     }
 })
 
-export const { setState } = imageSaveSlice.actions
+export const { setState, resetState } = imageSaveSlice.actions
 export const selectImageUploadState = (state: RootState): IImageSaveState => state.image_upload
 export default imageSaveSlice.reducer

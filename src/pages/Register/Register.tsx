@@ -1,4 +1,5 @@
 import styles from "./Register.module.css"
+import "./override.css"
 import { Button, Form, Input, message } from 'antd';
 import { isEmailValid, isPasswordValid } from '../../utils/utils';
 import { Link, useNavigate } from 'react-router-dom';
@@ -48,54 +49,55 @@ export default function Register() {
     };
 
     return (
-        <div>
+        <div className="user-register">
             <Navbar />
             <div className={styles.Header}>
                 <div className={styles.BackIconContainer} onClick={() => navigate(-1)}>
                     <CaretLeftFilled className={styles.BackIcon} />
                 </div>
                 <div>
-                    Login
+                    Register
                 </div>
             </div>
-<div className={styles.RegisterContainer}>
-<Form
-                name="basic"
-                labelCol={{ span: 8 }}
-                wrapperCol={{ span: 16 }}
-                style={{ maxWidth: 600 }}
-                initialValues={{ remember: true }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
-            >
-                <Form.Item<FieldType>
-                    label="Email"
-                    name="email"
-                    rules={[{ required: true, message: 'Please input your Email!' }]}
+            <div className={styles.RegisterContainer}>
+                <Form
+                    className={styles.RegisterForm}
+                    name="basic"
+                    labelCol={{ span: 8 }}
+                    wrapperCol={{ span: 16 }}
+                    style={{ maxWidth: 600 }}
+                    initialValues={{ remember: true }}
+                    onFinish={onFinish}
+                    onFinishFailed={onFinishFailed}
+                    autoComplete="off"
                 >
-                    <Input />
-                </Form.Item>
-
-                <Form.Item<FieldType>
-                    label="Password"
-                    name="password"
-                    rules={[{ required: true, message: 'Please input your password!' }]}
-                >
-                    <Input.Password />
-                </Form.Item>
-                <p>Already registered? Click <Link to='/login'> here </Link> to login</p>
-                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                    <Button
-                        type="primary"
-                        htmlType="submit"
-                        loading={_.isEqual(loader, "loading")}
+                    <Form.Item<FieldType>
+                        label="Email"
+                        name="email"
+                        rules={[{ required: true, message: 'Please input your Email!' }]}
                     >
-                        Register
-                    </Button>
-                </Form.Item>
-            </Form>
-</div>
+                        <Input />
+                    </Form.Item>
+
+                    <Form.Item<FieldType>
+                        label="Password"
+                        name="password"
+                        rules={[{ required: true, message: 'Please input your password!' }]}
+                    >
+                        <Input.Password />
+                    </Form.Item>
+                    <p>Already registered? Click <Link to='/login'> here </Link> to login</p> <br />
+                    <Form.Item wrapperCol={{ offset: 4, span: 16 }}>
+                        <Button
+                            type="primary"
+                            htmlType="submit"
+                            loading={_.isEqual(loader, "loading")}
+                        >
+                            Register
+                        </Button>
+                    </Form.Item>
+                </Form>
+            </div>
         </div>
     )
 }

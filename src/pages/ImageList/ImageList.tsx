@@ -13,7 +13,7 @@ const ImageList = () => {
   const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [searchText, setSearchText] = useState<string>("")
-  const [paginationQuery, setPaginationQuery] = useState<IPaginationAndSearchQuery>({ limit: 8, offset: 0,searchText:"" })
+  const [paginationQuery, setPaginationQuery] = useState<IPaginationAndSearchQuery>({ limit: 8, offset: 0, searchText: "" })
   const { imagesData, loader, totalDocuments } = useAppSelector(selectImageListState)
   const totalPages = Math.ceil(totalDocuments / 8)
 
@@ -25,19 +25,19 @@ const ImageList = () => {
     setCurrentPage((prev) => prev - 1);
     setPaginationQuery({ limit: 8, offset: (currentPage - 2) * 8 });
   };
-  
+
   const handleNext = () => {
     setCurrentPage((prev) => prev + 1);
     setPaginationQuery({ limit: 8, offset: currentPage * 8 });
   };
-  
+
   const handleSearch = () => {
     setPaginationQuery((prev) => ({
       ...prev,
       searchText: searchText,
     }));
   };
-  
+
 
   return (
     <div >
@@ -46,22 +46,23 @@ const ImageList = () => {
         <>
           {!_.isEmpty(imagesData) ? (
             <>
-            <div className={styles.SearchFilterContainer}>
-                  <div className={styles.SearchContainer}>
-                    <Input 
-                    placeholder="Enter title or description of image to search" 
-                    onChange={(e)=>setSearchText(e.target.value)}
-                    /> 
-                    <Button 
+              <div className={styles.SearchFilterContainer}>
+                <div className={styles.SearchContainer}>
+                  <Input
+                    value={searchText}
+                    placeholder="Enter title or description of image to search"
+                    onChange={(e) => setSearchText(e.target.value)}
+                  />
+                  <Button
                     onClick={handleSearch}
-                     type="primary"
-                     >
-                      Search
-                      </Button>
-                  </div>
+                    type="primary"
+                  >
+                    Search
+                  </Button>
                 </div>
+              </div>
               <div className={styles.ImageContainer}>
-                
+
                 {imagesData.map(({ _id, description, title, imageUrl }: IImageData) => (
                   <div key={_id} className={styles.ImageContainerBox} onClick={() => navigate(`/image-detail/${_id}`)}>
                     <div className={styles.ImageBox}>
@@ -70,14 +71,12 @@ const ImageList = () => {
                         alt={title}
                       />
                     </div>
-                    <p>{title}</p>
-                    <p>
-                      {description}
-                    </p>
+                    <p className={styles.DetailText}>{title}</p>
+                    <p className={styles.DetailText}>{description}</p>
                   </div>
                 ))}
               </div>
-              <footer className={styles.Footer}> <Button  type="primary" disabled={currentPage <= 1} onClick={handlePrev}>Prev</Button> <span>Page {currentPage} of {totalPages}</span> <Button  type="primary" disabled={currentPage >= totalPages} onClick={handleNext} >Next</Button> </footer>
+              <footer className={styles.Footer}> <Button type="primary" disabled={currentPage <= 1} onClick={handlePrev}>Prev</Button> <span>Page {currentPage} of {totalPages}</span> <Button type="primary" disabled={currentPage >= totalPages} onClick={handleNext} >Next</Button> </footer>
             </>
           ) : (
             <div className={styles.LoaderDiv}>Images not found</div>
