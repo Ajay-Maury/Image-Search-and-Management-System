@@ -40,7 +40,7 @@ export default function Login() {
       dispatch(setState({ key: "message", value: { type: "error", message: "Please enter a valid email id" } }))
     }
     else if (!isValidPassword) {
-      dispatch(setState({ key: "message", value: { type: "error", message: "Please enter a valid password" } }))
+      dispatch(setState({ key: "message", value: { type: "error", message: "Please enter a strong password" } }))
     } else {
       dispatch(loginUserAsync(values))
     }

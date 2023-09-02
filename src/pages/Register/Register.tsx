@@ -37,7 +37,7 @@ export default function Register() {
             dispatch(setState({ key: "errorMessage", value: "Please enter a valid email id" }))
         }
         else if (!isValidPassword) {
-            dispatch(setState({ key: "errorMessage", value: "Please enter a valid password" }))
+            dispatch(setState({ key: "errorMessage", value: "Please enter a strong password" }))
         } else {
             dispatch(registerUserAsync(values))
         }
