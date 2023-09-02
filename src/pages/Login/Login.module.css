@@ -36,3 +36,11 @@
     border-radius: 15px;
     background-color: rgba(222, 221, 220, 0.493);
 }   
+
+
+@media screen and (max-width: 470px) {
+    .LoginForm {
+        width: 100%;
+        text-align: left;
+    }
+}
