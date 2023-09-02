@@ -135,7 +135,7 @@ const UploadImages = () => {
               <div className={styles.Label}>Keywords</div>
               <Input
                 value={keywords}
-                placeholder='Enter keywords with , separated values'
+                placeholder='Enter , separated values'
                 className={styles.Input}
                 onChange={(e) => dispatch(setState({ key: "keywords", value: _.get(e, 'target.value', "") }))}
               />

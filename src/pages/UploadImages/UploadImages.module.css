@@ -1,4 +1,4 @@
-.Header{
+.Header {
     margin-left: 20px;
     display: flex;
     font-weight: bold;
@@ -6,30 +6,30 @@
     align-items: center;
 }
 
-.Container{
+.Container {
     margin: 20px;
 }
 
-.BackIconContainer{
+.BackIconContainer {
     font-size: 1.5rem;
     margin-right: 10px;
     padding-right: 3px;
 
 }
 
-.BackIconContainer:hover{
+.BackIconContainer:hover {
     cursor: pointer;
     background-color: rgb(112, 111, 111);
     border-radius: 50%;
     color: white;
 }
 
-.DraggerContainer{
+.DraggerContainer {
     padding: 2px;
     height: 40vh;
 }
 
-.ImageDetailsContainer{
+.ImageDetailsContainer {
     margin-top: 20px;
     display: flex;
     align-items: center;
@@ -37,34 +37,38 @@
     width: 100%;
 }
 
-.ImageDetailsContainer>div{
-    flex: 0.5;
+.ImageDetailsContainer>div {
+    flex: 0.7;
 }
 
-.ImageNameBox{
+.ImageNameBox {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
     margin: 5px 2px;
-
 }
 
 .Label {
     width: 100px
 }
 
-.Input{
+.Input {
     width: 100%
 }
 
-.SubmitButtonContainer{
+.SubmitButtonContainer {
     text-align: center;
     margin: 2% 5%;
 }
 
-.SubmitButton{
+.SubmitButton {
     font-size: 1.2rem;
     font-weight: 600;
     padding: 0.5% 5%;
     height: auto;
+}
+
+@media screen and (max-width: 470px) {
+    .ImageDetailsContainer>div {
+        flex: 0.9;
+    }
 }
