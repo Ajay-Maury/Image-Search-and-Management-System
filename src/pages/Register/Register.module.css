@@ -37,3 +37,10 @@
     background-color: rgba(222, 221, 220, 0.493);
     font-size: 1rem;
 }  
+
+@media screen and (max-width: 470px) {
+    .RegisterForm {
+        width: 100%;
+        text-align: left;
+    }
+}
