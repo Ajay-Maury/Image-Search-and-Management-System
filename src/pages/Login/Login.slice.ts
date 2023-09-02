@@ -15,7 +15,7 @@ const initialState: ILoginUserState = {
 
 export const loginUserAsync = createAsyncThunk(
     'user/loginUserAsync',
-    async (payload:ILoginValues) => {
+    async (payload: ILoginValues) => {
         return await loginUser(payload)
     }
 )
@@ -30,35 +30,35 @@ export const loginUserSlice = createSlice({
             _.update(state, `${key}`, () => value);
         },
     },
-    extraReducers: builder =>{
+    extraReducers: builder => {
         builder
-        .addCase(loginUserAsync.pending,state=>{
-            state.loader="loading"
-        })
-        .addCase(loginUserAsync.fulfilled,(state,action)=>{
-            const {message,status=false,token=""} = action.payload
-            if(status){
-                state.loader = "success"
-                state.token = token;
-                state.message = {
-                    type:"success",
-                    message
+            .addCase(loginUserAsync.pending, state => {
+                state.loader = "loading"
+            })
+            .addCase(loginUserAsync.fulfilled, (state, action) => {
+                const { message, status = false, token = "" } = action.payload
+                if (status) {
+                    state.loader = "success"
+                    state.token = token;
+                    state.message = {
+                        type: "success",
+                        message
+                    }
+                } else {
+                    state.loader = "failed"
+                    state.message = {
+                        type: "error",
+                        message
+                    }
                 }
-            } else {
+            })
+            .addCase(loginUserAsync.rejected, (state) => {
                 state.loader = "failed"
                 state.message = {
-                    type:"error",
-                    message
+                    type: "error",
+                    message: "Something went wrong"
                 }
-            }
-        })
-        .addCase(loginUserAsync.rejected,(state,action)=>{
-            state.loader = "failed"
-            state.message = {
-                type:"error",
-                message:"error"
-            }
-        })
+            })
     }
 })
 
