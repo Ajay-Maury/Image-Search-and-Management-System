@@ -97,6 +97,7 @@ const UploadImages = () => {
         <div className={styles.DraggerContainer}>
           <Dragger
             {...props}
+            // @ts-ignore
             beforeUpload={beforeUpload}
             className={styles.Dragger}
             showUploadList={false}

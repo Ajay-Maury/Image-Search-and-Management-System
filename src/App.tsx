@@ -5,7 +5,7 @@ import ImageList from './pages/ImageList/ImageList';
 import UploadImages from './pages/UploadImages/UploadImages';
 import ImageDetailView from './pages/ImageDetailView/ImageDetailView';
 import _ from 'lodash';
-import { getToken, isUserLoggedin } from './utils/utils';
+import { isUserLoggedin } from './utils/utils';
 
 function App() {
 

@@ -39,7 +39,7 @@ const imageListSlice = createSlice({
             state.imagesData = data;
             state.totalDocuments = totalCount;
         })
-        .addCase(getImageListDataAsync.rejected,(state,action)=>{
+        .addCase(getImageListDataAsync.rejected,(state)=>{
             state.loader = "failed"
         })
     }

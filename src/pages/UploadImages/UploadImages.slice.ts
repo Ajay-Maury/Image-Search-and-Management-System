@@ -42,7 +42,7 @@ const imageSaveSlice = createSlice({
             .addCase(saveUploadImageAsync.fulfilled, (state) => {
                 state.loader = "success";
             })
-            .addCase(saveUploadImageAsync.rejected, (state, action) => {
+            .addCase(saveUploadImageAsync.rejected, (state) => {
                 state.loader = "failed"
             })
     }

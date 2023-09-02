@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.css"
-import { Space, Button, Layout } from "antd";
+import { Space, Button } from "antd";
 import { HomeOutlined, LoginOutlined, LogoutOutlined, UploadOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { isUserLoggedin } from "../../utils/utils";

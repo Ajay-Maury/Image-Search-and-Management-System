@@ -14,7 +14,7 @@ const ImageList = () => {
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [searchText, setSearchText] = useState<string>("")
   const [paginationQuery, setPaginationQuery] = useState<IPaginationAndSearchQuery>({ limit: 8, offset: 0,searchText:"" })
-  const { imagesData, loader, message, totalDocuments } = useAppSelector(selectImageListState)
+  const { imagesData, loader, totalDocuments } = useAppSelector(selectImageListState)
   const totalPages = Math.ceil(totalDocuments / 8)
 
   useEffect(() => {
