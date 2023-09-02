@@ -21,8 +21,7 @@ export default function Login() {
       if (messageState.type === "success") {
         message.success(messageState.message);
         dispatch(setState({ key: "message", value: { type: "", message: "" } }))
-        console.log('`url', `${window.location.protocol}//${window.location.host}/home`)
-        window.location.href = `${window.location.protocol}//${window.location.host}/home`
+        window.location.href = `${window.location.protocol}//${window.location.host}`
       }
       if (messageState.type === "error") {
         message.error(messageState.message);

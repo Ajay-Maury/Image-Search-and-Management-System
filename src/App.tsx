@@ -13,9 +13,9 @@ function App() {
     <main>
       {isUserLoggedin() ? <Router>
         <Routes>
+          <Route path="/" element={<ImageList />} />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<ImageList />} />
           <Route path="/upload" element={<UploadImages />} />
           <Route path="/image-detail/:id" element={<ImageDetailView />} />
           <Route path="*" element={<Login />} />
