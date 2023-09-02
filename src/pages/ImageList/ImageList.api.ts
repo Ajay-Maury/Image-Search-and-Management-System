@@ -1,17 +1,12 @@
 import axios from "axios";
 import { config } from "../../config/config";
-import { IGetImageData } from "./ImageList.interface";
+import { IGetImageData, IPaginationAndSearchQuery } from "./ImageList.interface";
+import { getTokenHeader } from "../../utils/utils";
 
-
-const localStorageData = JSON.parse(localStorage.getItem('persist:userToken') || "");
-const token = localStorageData ?  localStorageData?.token || "" : "";
-const headers = {
-    Authorization: `Bearer ${token.substring(1, token.length - 1)}`,
-  };
-
-export async function getImagesData():Promise<IGetImageData>{
-    const {data} = await axios.get(`${config.IMAGE_SEARCH_SERVICE_URL}/api/image/search`,
-    {headers}
+export async function getImagesData(paginationQuery: IPaginationAndSearchQuery): Promise<IGetImageData> {
+    const { limit, offset, searchText = "" } = paginationQuery
+    const { data } = await axios.post(`${config.IMAGE_SEARCH_SERVICE_URL}/api/image/search`, { limit, offset, searchText },
+        { headers: getTokenHeader() }
     )
     return data
 }

@@ -1,0 +1,29 @@
+.LoginContainer{
+    display: flex;
+    margin: 25px;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.Header{
+    margin-left: 20px;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+.BackIconContainer{
+    font-size: 1.5rem;
+    margin-right: 10px;
+    padding-right: 3px;
+
+}
+
+.BackIconContainer:hover{
+    cursor: pointer;
+    background-color: rgb(112, 111, 111);
+    border-radius: 50%;
+    color: white;
+}

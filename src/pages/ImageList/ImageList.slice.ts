@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IImageListState } from "./ImageList.interface";
+import { IImageListState, IPaginationAndSearchQuery } from "./ImageList.interface";
 import _ from "lodash";
 import { RootState } from "../../store/store";
 import { getImagesData } from "./ImageList.api";
@@ -14,8 +14,8 @@ totalDocuments:0
 
 export const getImageListDataAsync = createAsyncThunk(
     'image/getImageListDataAsync',
-    async ()=>{
-        return getImagesData()
+    async (paginationQuery:IPaginationAndSearchQuery)=>{
+        return getImagesData(paginationQuery)
     }
 )
 
@@ -40,7 +40,6 @@ const imageListSlice = createSlice({
             state.totalDocuments = totalCount;
         })
         .addCase(getImageListDataAsync.rejected,(state,action)=>{
-            console.log('action err:', action)
             state.loader = "failed"
         })
     }

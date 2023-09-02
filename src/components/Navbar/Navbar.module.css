@@ -1,0 +1,26 @@
+.Header{
+    background: rgb(190, 190, 244);
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    padding: 1% 2%;
+    font-size: 1.2rem;
+    /* position: fixed; */
+    margin-bottom: 10px;
+}
+
+.MenuContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.MenuItems {
+    padding: 5px;
+    color: black;
+}
+
+.MenuItems:hover{
+    background-color: rgb(163, 163, 238);
+    cursor: pointer;
+}

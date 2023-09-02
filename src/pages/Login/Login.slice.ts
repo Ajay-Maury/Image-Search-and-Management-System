@@ -36,7 +36,6 @@ export const loginUserSlice = createSlice({
             state.loader="loading"
         })
         .addCase(loginUserAsync.fulfilled,(state,action)=>{
-            console.log('action.payload:', action.payload)
             const {message,status=false,token=""} = action.payload
             if(status){
                 state.loader = "success"
@@ -54,7 +53,6 @@ export const loginUserSlice = createSlice({
             }
         })
         .addCase(loginUserAsync.rejected,(state,action)=>{
-            console.log('action:', action)
             state.loader = "failed"
             state.message = {
                 type:"error",

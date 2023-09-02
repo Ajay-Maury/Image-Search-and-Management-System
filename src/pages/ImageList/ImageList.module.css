@@ -1,27 +1,45 @@
-.movie
+.ImageContainer
 {
     padding: 0.2% 3% 3%;
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 30px;
+    gap: 50px;
     height: max-content;
 }
-.box 
+.SearchFilterContainer{
+    margin: 5px 0 10px 25px;
+}
+.SearchContainer{
+    display: flex;
+    width: 50%;
+}
+
+.SearchContainer>Input{
+    width: 70%;
+    margin-right: 5px;
+}
+
+.ImageContainerBox 
 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 3px;
     text-align: center;
     font-size: 1.1em;
+    border-radius: 5%;
 }
 
-.img_box
+.ImageBox
 {
+    border-radius: 5%;
+    border: 1px solid black;
     height: 300px;
 }
-.img_box>img
+
+.ImageBox>img
 {
     width: 100%;
     height: 100%;
+    padding: 1%;
 }
 
 .link{
@@ -30,4 +48,17 @@
     color: black;
     /* font-weight: bold; */
     font-size: 1.3rem;
+}
+
+.LoaderDiv{
+    width: 100;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Footer{
+    text-align: right;
+    margin: 0px 25px 10px 0;
 }

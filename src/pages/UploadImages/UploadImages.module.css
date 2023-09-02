@@ -1,0 +1,70 @@
+.Header{
+    margin-left: 20px;
+    display: flex;
+    font-weight: bold;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+.Container{
+    margin: 20px;
+}
+
+.BackIconContainer{
+    font-size: 1.5rem;
+    margin-right: 10px;
+    padding-right: 3px;
+
+}
+
+.BackIconContainer:hover{
+    cursor: pointer;
+    background-color: rgb(112, 111, 111);
+    border-radius: 50%;
+    color: white;
+}
+
+.DraggerContainer{
+    padding: 2px;
+    height: 40vh;
+}
+
+.ImageDetailsContainer{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.ImageDetailsContainer>div{
+    flex: 0.5;
+}
+
+.ImageNameBox{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    margin: 5px 2px;
+
+}
+
+.Label {
+    width: 100px
+}
+
+.Input{
+    width: 100%
+}
+
+.SubmitButtonContainer{
+    text-align: center;
+    margin: 2% 5%;
+}
+
+.SubmitButton{
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5% 5%;
+    height: auto;
+}

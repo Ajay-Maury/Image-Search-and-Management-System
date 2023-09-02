@@ -1,3 +1,4 @@
+import styles from "./Register.module.css"
 import { Button, Form, Input, message } from 'antd';
 import { isEmailValid, isPasswordValid } from '../../utils/utils';
 import { Link, useNavigate } from 'react-router-dom';
@@ -6,6 +7,8 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { registerUserAsync, selectRegisterUSer, setState } from './Register.slice';
 import _ from 'lodash';
 import { useEffect } from 'react';
+import Navbar from '../../components/Navbar/Navbar';
+import { CaretLeftFilled } from '@ant-design/icons';
 
 
 export default function Register() {
@@ -46,7 +49,17 @@ export default function Register() {
 
     return (
         <div>
-            <Form
+            <Navbar />
+            <div className={styles.Header}>
+                <div className={styles.BackIconContainer} onClick={() => navigate(-1)}>
+                    <CaretLeftFilled className={styles.BackIcon} />
+                </div>
+                <div>
+                    Login
+                </div>
+            </div>
+<div className={styles.RegisterContainer}>
+<Form
                 name="basic"
                 labelCol={{ span: 8 }}
                 wrapperCol={{ span: 16 }}
@@ -82,6 +95,7 @@ export default function Register() {
                     </Button>
                 </Form.Item>
             </Form>
+</div>
         </div>
     )
 }

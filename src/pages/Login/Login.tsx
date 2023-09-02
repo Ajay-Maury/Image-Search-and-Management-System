@@ -1,3 +1,4 @@
+import styles from "./Login.module.css"
 import { Link, useNavigate } from 'react-router-dom';
 import { isEmailValid, isPasswordValid } from '../../utils/utils';
 import { Button, Checkbox, Form, Input, message } from 'antd';
@@ -6,6 +7,8 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { loginUserAsync, selectLoginUSerState, setState } from './Login.slice';
 import _ from 'lodash';
 import { useEffect } from 'react';
+import Navbar from "../../components/Navbar/Navbar";
+import { CaretLeftFilled } from "@ant-design/icons";
 
 export default function Login() {
     const dispatch = useAppDispatch()
@@ -49,6 +52,16 @@ export default function Login() {
 
     return (
         <div>
+            <Navbar/>
+            <div className={styles.Header}>
+        <div className={styles.BackIconContainer} onClick={() => navigate(-1)}>
+          <CaretLeftFilled className={styles.BackIcon} />
+        </div>
+        <div>
+          Login
+        </div>
+      </div>
+        <div className={styles.LoginContainer}>
             <Form
                 name="basic"
                 labelCol={{ span: 8 }}
@@ -95,6 +108,7 @@ export default function Login() {
                     </Button>
                 </Form.Item>
             </Form>
+        </div>
         </div>
     )
 }

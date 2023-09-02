@@ -12,8 +12,9 @@ export interface IImageData {
     title: string;
     description: string;
     imageUrl: string;
-    dimensions: string;
     size: number;
+    height: number;
+    width: number;
     keywords: string[];
     tags: string[];
     uploadedAt: string;
@@ -22,4 +23,10 @@ export interface IImageData {
 export interface IGetImageData {
     data: IImageData[];
     totalCount: number;
+}
+
+export interface IPaginationAndSearchQuery{
+    limit:number;
+    offset:number;
+    searchText?:string;
 }

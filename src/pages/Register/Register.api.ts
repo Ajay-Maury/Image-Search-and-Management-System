@@ -6,7 +6,6 @@ import { IRegisterValues } from "./Register.interface";
 export async function registerUser(payload: IRegisterValues): Promise<{ message: string, status: boolean }> {
     try {
         const { data } = await axios.post(`${config.IMAGE_SEARCH_SERVICE_URL}/api/user/register`, payload)
-        console.log('data:', data)
         return { ...data, status: true }
     } catch (error) {
         return { message: _.get(error, "response.data.message", "Something went wrong please try again"), status: false }

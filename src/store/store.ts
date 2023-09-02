@@ -5,7 +5,8 @@ import storage from "redux-persist/lib/storage";
 import registerUserReducer from '../pages/Register/Register.slice.ts'
 import loginUserReducer from '../pages/Login/Login.slice.ts'
 import imageListReducer from "../pages/ImageList/ImageList.slice.ts"
-
+import imageUploadReducer from "../pages/UploadImages/UploadImages.slice.ts"
+import imageDetailViewReducer from "../pages/ImageDetailView/ImageDetailView.slice.ts"
 const authPersistConfig = {
     key: "userToken",
     storage,
@@ -15,7 +16,9 @@ const authPersistConfig = {
 const rootReducer = combineReducers({
     user: persistReducer(authPersistConfig, loginUserReducer),
     register_user: registerUserReducer,
-    image_list: imageListReducer
+    image_list: imageListReducer,
+    image_upload: imageUploadReducer,
+    image_detail_view: imageDetailViewReducer
 });
 
 export const store = configureStore({

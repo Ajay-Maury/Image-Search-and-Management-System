@@ -8,7 +8,6 @@ export async function loginUser(payload: ILoginValues): Promise<{ message: strin
         const { data } = await axios.post(`${config.IMAGE_SEARCH_SERVICE_URL}/api/user/login`, payload)
         return data
     } catch (error) {
-        console.log('error:', error)
         return { message: _.get(error, "response.data.message", "Something went wrong please try again"), status: false }
     }
 }
