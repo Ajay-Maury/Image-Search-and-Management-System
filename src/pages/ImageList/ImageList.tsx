@@ -44,8 +44,6 @@ const ImageList = () => {
       <Navbar />
       {_.isEqual(loader, "loading") ? <div className={styles.LoaderDiv}><Spin /></div> :
         <>
-          {!_.isEmpty(imagesData) ? (
-            <>
               <div className={styles.SearchFilterContainer}>
                 <div className={styles.SearchContainer}>
                   <Input
@@ -61,8 +59,10 @@ const ImageList = () => {
                   </Button>
                 </div>
               </div>
+              
+          {!_.isEmpty(imagesData) ? (
+            <>
               <div className={styles.ImageContainer}>
-
                 {imagesData.map(({ _id, description, title, imageUrl }: IImageData) => (
                   <div key={_id} className={styles.ImageContainerBox} onClick={() => navigate(`/image-detail/${_id}`)}>
                     <div className={styles.ImageBox}>

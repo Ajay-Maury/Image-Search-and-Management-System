@@ -13,7 +13,10 @@ const Navbar = () => {
         <div className={styles.MenuContainer}>
           <div>
             <Space size={25}>
-              <p className={styles.MenuItems} onClick={() => navigate('/home')}><HomeOutlined /> Home</p>
+              <p className={styles.MenuItems} onClick={() => window.location.href = `${window.location.protocol}//${window.location.host}/home`}>
+                <HomeOutlined />
+                Home
+              </p>
               <p className={styles.MenuItems}>About</p>
             </Space>
           </div>
