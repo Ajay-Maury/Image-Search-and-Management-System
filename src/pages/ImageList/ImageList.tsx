@@ -13,9 +13,9 @@ const ImageList = () => {
   const navigate = useNavigate()
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [searchText, setSearchText] = useState<string>("")
-  const [paginationQuery, setPaginationQuery] = useState<IPaginationAndSearchQuery>({ limit: 8, offset: 0, searchText: "" })
+  const [paginationQuery, setPaginationQuery] = useState<IPaginationAndSearchQuery>({ limit: 12, offset: 0, searchText: "" })
   const { imagesData, loader, totalDocuments } = useAppSelector(selectImageListState)
-  const totalPages = Math.ceil(totalDocuments / 8)
+  const totalPages = Math.ceil(totalDocuments / 12)
 
   useEffect(() => {
     dispatch(getImageListDataAsync(paginationQuery))
@@ -23,12 +23,12 @@ const ImageList = () => {
 
   const handlePrev = () => {
     setCurrentPage((prev) => prev - 1);
-    setPaginationQuery({ limit: 8, offset: (currentPage - 2) * 8 });
+    setPaginationQuery({ limit: 12, offset: (currentPage - 2) * 12 });
   };
 
   const handleNext = () => {
     setCurrentPage((prev) => prev + 1);
-    setPaginationQuery({ limit: 8, offset: currentPage * 8 });
+    setPaginationQuery({ limit: 12, offset: currentPage * 12 });
   };
 
   const handleSearch = () => {
