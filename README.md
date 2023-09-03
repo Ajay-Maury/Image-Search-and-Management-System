@@ -129,4 +129,3 @@ You can access the deployed application at the following URL:
 Feel free to explore and use the live version of this frontend application for your Image Search and Management System project. If you have any questions or encounter any issues, please refer to the project's documentation or reach out to me.
 
 Happy image management!
-```
